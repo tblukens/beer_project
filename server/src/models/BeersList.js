@@ -1,8 +1,8 @@
 module.exports = (sequelize, DataTypes) => {
   const BeersList = sequelize.define('BeersList', {
     beerName: DataTypes.STRING,
-    style: DataTypes.STRING,
-    description: DataTypes.TEXT,
+    beerStyle: DataTypes.STRING,
+    beerDescription: DataTypes.TEXT,
     abv: DataTypes.STRING,
     ibu: DataTypes.STRING
   })

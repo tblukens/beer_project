@@ -1,7 +1,11 @@
 module.exports = (sequelize, DataTypes) => {
   const UsersBeerList = sequelize.define('UsersBeerList', {
     beerName: DataTypes.STRING,
-    beerId: DataTypes.STRING
+    beerStyle: DataTypes.STRING,
+    beerDescription: DataTypes.TEXT,
+    abv: DataTypes.STRING,
+    ibu: DataTypes.STRING,
+    breweryId: DataTypes.STRING
   })
 
   UsersBeerList.associate = function (models) {

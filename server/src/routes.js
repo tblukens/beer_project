@@ -2,8 +2,9 @@
 const AuthenticationController = require('./controllers/AuthenticationController')
 const AuthenticationControllerPolicy = require('./policies/AuthenticationControllerPolicy')
 const WishListsController = require('./controllers/WishListsController')
-const WalmartController = require('./controllers/Walmart_Controller')
 const UserController = require('./controllers/UserController')
+const FriendsController = require('./controllers/FriendsController')
+const UserBeerController = require('./controllers/UserBeerController')
 
 module.exports = (app) => {
   app.post('/register',
@@ -19,9 +20,12 @@ module.exports = (app) => {
   app.post('/wishlists',
     WishListsController.post)
 
-  app.post('/api/walmart/:search',
-    WalmartController.search)
-
   app.get('/user/:user',
-    UserController.userWishList)
+    UserController.userDisplay)
+
+  app.post('/friends/add',
+    FriendsController.addFriend)
+
+  app.post('/beer/user/add',
+    UserBeerController.addBeer)
 }
